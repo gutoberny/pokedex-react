@@ -1,19 +1,24 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import React, { useState, useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FcLike } from "react-icons/fc";
+import FavoriteContext from "../Contexts/favoritesContext";
 
 const Pokemon = (props) => {
     const [like, setLike] = useState(false);
     const { pokemon } = props;
+    const { favoritePokemons, updateFavoritePokemons } =
+        useContext(FavoriteContext);
+
     const onHeartClick = () => {
         if (!like) {
             setLike(true);
+            updateFavoritePokemons(pokemon.name);
         } else {
             setLike(false);
         }
-        console.log("favoritado");
     };
+
     return (
         <div className="pokemon-card">
             <div className="pokemon-image-container">
@@ -42,7 +47,11 @@ const Pokemon = (props) => {
                         className="pokemon-heart-btn"
                         onClick={onHeartClick}
                     >
-                        {!like ? <AiOutlineHeart /> : <FcLike />}
+                        {!favoritePokemons.includes(pokemon.name) ? (
+                            <AiOutlineHeart />
+                        ) : (
+                            <FcLike />
+                        )}
                     </button>
                 </div>
             </div>
