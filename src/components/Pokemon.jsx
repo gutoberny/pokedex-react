@@ -21,14 +21,12 @@ const Pokemon = (props) => {
     }
   };
 
-  console.log();
-  const img = `../src/assets/animated/${pokemon.id}.gif`;
   return (
     <>
       <div id="Card" className={pokemon.types[0].type.name}>
         <div className="pokemon-image-container">
           <Img>
-            <img src={img} />
+            <img src={`../src/assets/animated/${pokemon.id}.gif`} />
           </Img>
         </div>
         <div className="card-body">
