@@ -5,7 +5,6 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { FcLike } from "react-icons/fc";
 import FavoriteContext from "../Contexts/favoritesContext";
 import "./Pokemon.css";
-import "../assets/animated/1.gif";
 
 const Pokemon = (props) => {
   const [like, setLike] = useState(false);
@@ -22,13 +21,14 @@ const Pokemon = (props) => {
     }
   };
 
-  const img = `../src/assets/animated/${pokemon.id}.gif`;
   return (
     <>
       <div id="Card" className={pokemon.types[0].type.name}>
         <div className="pokemon-image-container">
           <Img>
-            <img src={img} />
+            <img
+              src={`https://www.pkparaiso.com/imagenes/xy/sprites/animados/${pokemon.name}.gif`}
+            />
           </Img>
         </div>
         <div className="card-body">
