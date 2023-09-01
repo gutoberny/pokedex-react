@@ -26,7 +26,7 @@ const Pokemon = (props) => {
       <div id="Card" className={pokemon.types[0].type.name}>
         <div className="pokemon-image-container">
           <Img>
-            <img src={`../src/assets/animated/${pokemon.id}.gif`} />
+            <img src={`../animated/${pokemon.id}.gif`} />
           </Img>
         </div>
         <div className="card-body">
