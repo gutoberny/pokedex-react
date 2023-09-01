@@ -5,7 +5,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { FcLike } from "react-icons/fc";
 import FavoriteContext from "../Contexts/favoritesContext";
 import "./Pokemon.css";
-import "../assets/animated";
+import "../assets/animated/1.gif";
 
 const Pokemon = (props) => {
   const [like, setLike] = useState(false);
